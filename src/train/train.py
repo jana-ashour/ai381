@@ -1,12 +1,14 @@
+import os
+
+import joblib
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import f1_score, roc_auc_score
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from sklearn.metrics import f1_score, roc_auc_score
-import os
-import joblib 
+
 # ----
 DATA = 'data/churn_v1.csv'   # Twist 1: change this to churn_v2.csv
 df = pd.read_csv(DATA)
