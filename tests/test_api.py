@@ -13,21 +13,6 @@ GOOD = {
     "support_calls": 3,
 }
 
-import joblib
-from fastapi.testclient import TestClient
-
-from src.app.main import app
-
-client = TestClient(app)
-
-GOOD = {
-    "tenure_months": 5,
-    "monthly_charges": 89.9,
-    "contract": "month-to-month",
-    "internet_service": "fiber",
-    "support_calls": 3,
-}
-
 
 def test_health():
     r = client.get("/health")
